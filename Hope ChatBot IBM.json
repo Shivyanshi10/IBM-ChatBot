@@ -1,0 +1,3376 @@
+{
+  "name": "Overcoming Addiction-action",
+  "type": "action",
+  "counts": {
+    "actions": 5,
+    "intents": 2,
+    "entities": 12,
+    "data_types": 1,
+    "collections": 0,
+    "global_variables": 1
+  },
+  "status": "Available",
+  "language": "en",
+  "skill_id": "fb8f8b81-73a3-474e-86a5-63969d2d81cb",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "digression_failure",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't confirm if you wanted to return to previous topic, let me connect to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "digression_failure",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Failed to confirm topic return"
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. I can connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't assist you. I will connect you to an agent right away."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I am afraid I do not understand what you are asking, let me connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Topic return failed",
+            "variable": "digression_failure",
+            "data_type": "any"
+          },
+          {
+            "title": "I'm afraid I don't understand. I can connect you to an agent.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Sorry I couldn't assist you. I will connect you to an agent righ",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "I am afraid I do not understand what you are asking, let me conn",
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "It seems this conversation would be best managed",
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Profanity - It seems this conversation",
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please use appropriate language when interacting with the assistant."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. Please rephrase your question."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No action matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "I am afraid I do not understand what you are asking, please re-p",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Welcome, how can I assist you?"
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_1855",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_619",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Welcome to \"The HOPE Recovering Drug Addiction ChatBot!!!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi, What is patient's first name and last name?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "scalar": "name"
+                  },
+                  "skill_variable": "name"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_619",
+            "next_step": "step_698"
+          },
+          {
+            "step": "step_698",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "What is patient's email address?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_698",
+            "next_step": "step_599"
+          },
+          {
+            "step": "step_599",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "What is your phone number?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_599",
+            "next_step": "step_701"
+          },
+          {
+            "step": "step_701",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "How old is patient?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Enter a number."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_701",
+            "next_step": "step_426"
+          },
+          {
+            "step": "step_426",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hey, "
+                          },
+                          {
+                            "variable": "step_619"
+                          },
+                          {
+                            "scalar": " For whom this treatment are you looking for?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Individual(for myself)",
+                      "value": {
+                        "input": {
+                          "text": "Individual(for myself)"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Couples(for myself and my partner)",
+                      "value": {
+                        "input": {
+                          "text": "Couples(for myself and my partner)"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Teen(for my child)",
+                      "value": {
+                        "input": {
+                          "text": "Teen(for my child)"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_13518",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_426",
+            "next_step": "step_660"
+          },
+          {
+            "step": "step_660",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "What is patient's identity?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Male",
+                      "value": {
+                        "input": {
+                          "text": "Male"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Female",
+                      "value": {
+                        "input": {
+                          "text": "Female"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Other",
+                      "value": {
+                        "input": {
+                          "text": "Other"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_14274",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_660",
+            "condition": {
+              "or": [
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        {
+                          "variable": "step_426"
+                        },
+                        {
+                          "value": "Individual(for myself)",
+                          "from_entity": "entity_13518"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        {
+                          "variable": "step_426"
+                        },
+                        {
+                          "value": "Couples(for myself and my partner)",
+                          "from_entity": "entity_13518"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        {
+                          "variable": "step_426"
+                        },
+                        {
+                          "value": "Teen(for my child)",
+                          "from_entity": "entity_13518"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_795"
+          },
+          {
+            "step": "step_795",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "How are you feeling right now?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Addictive",
+                      "value": {
+                        "input": {
+                          "text": "Addictive"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Craving",
+                      "value": {
+                        "input": {
+                          "text": "Craving"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_49868",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_795",
+            "next_step": "step_306"
+          },
+          {
+            "step": "step_306",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "How long have you been using drugs?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Less than 5 yrs",
+                      "value": {
+                        "input": {
+                          "text": "Less than 5 yrs"
+                        }
+                      }
+                    },
+                    {
+                      "label": "More than 5 yrs",
+                      "value": {
+                        "input": {
+                          "text": "More than 5 yrs"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_32562",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_306",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "value": "Addictive",
+                  "from_entity": "entity_49868"
+                }
+              ]
+            },
+            "next_step": "step_529"
+          },
+          {
+            "step": "step_529",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Here are five-six key points to help someone who has decided to leave the habit of drug and alcohol use, especially if the duration of use has been less than five years:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "1. **Seek Professional Help:** Encourage the individual to consult with a healthcare professional, addiction counselor, or therapist.\n  2. **Develop a Support System:** Building a strong support network is crucial. This can include family members, friends, or support groups.\n  3. **Set Realistic Goals:** Work with the individual to establish achievable short-term and long-term goals."
+                          },
+                          {
+                            "scalar": " Celebrate small victories along the way.\n  4. **Explore Therapy Options:** Cognitive-behavioral therapy (CBT), motivational enhancement therapy (MET), these therapies can help individuals understand the underlying factors contributing to their substance use and develop healthier coping mechanisms.\n  5. **Adopt Healthy Lifestyle Changes:** Encourage the adoption of a healthier lifestyle,"
+                          },
+                          {
+                            "scalar": " including regular exercise, a balanced diet, and sufficient sleep.\n  6. **Attend Support Groups:** In addition to professional therapy, attending support groups like Alcoholics Anonymous (AA) or Narcotics Anonymous (NA) can provide a sense of community and understanding."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_529",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_306"
+                },
+                {
+                  "value": "Less than 5 yrs",
+                  "from_entity": "entity_32562"
+                }
+              ]
+            },
+            "next_step": "step_727"
+          },
+          {
+            "step": "step_727",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Overcoming drug and alcohol use after an extended period of more than 5 years can be challenging, but with the right support individuals can achieve recovery. Here are six key points to help someone who has decided to leave the habit of drug and alcohol use:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "1. **Comprehensive Assessment and Professional Treatment:** Seek a comprehensive assessment by a healthcare professional or addiction specialist to understand the extent of the substance use and any co-occurring mental health issues.\n  2. **Therapy and Counseling:** Engage in individual and group therapy sessions to address the psychological aspects of addiction. Cognitive-"
+                          },
+                          {
+                            "scalar": "behavioral therapy (CBT), dialectical behavior therapy (DBT), and other evidence-based therapies can help individuals identify and change patterns of thinking.\n  3. **Medication-Assisted Treatment (MAT):** Depending on the substance used, medication-assisted treatment may be recommended. Medications such as methadone, buprenorphine, or naltrexone can help manage cravings and withdrawal symptoms."
+                          },
+                          {
+                            "scalar": "\n  4. **Supportive Community and 12-Step Programs:** Encourage participation in support groups such as Alcoholics Anonymous (AA) or Narcotics Anonymous (NA).\n  5. **Holistic Health Approaches:** Incorporate holistic approaches to support overall well-being. This may include mindfulness practices, yoga, exercise, and nutrition.\n  6."
+                          },
+                          {
+                            "scalar": " **Aftercare Planning:** Develop a comprehensive aftercare plan to maintain recovery after the initial treatment period. This may involve ongoing therapy, support group participation, regular check-ins with healthcare professionals."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_727",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_306"
+                },
+                {
+                  "value": "More than 5 yrs",
+                  "from_entity": "entity_32562"
+                }
+              ]
+            },
+            "next_step": "step_691"
+          },
+          {
+            "step": "step_691",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Do you want take Assessment Questions to guide and support you more?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_691",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_306"
+                },
+                {
+                  "value": "More than 5 yrs",
+                  "from_entity": "entity_32562"
+                }
+              ]
+            },
+            "next_step": "step_460"
+          },
+          {
+            "step": "step_460",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "How long have you been using drugs?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "More than 5 yrs",
+                      "value": {
+                        "input": {
+                          "text": "More than 5 yrs"
+                        }
+                      }
+                    },
+                    {
+                      "label": "5 yrs",
+                      "value": {
+                        "input": {
+                          "text": "5 yrs"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_10876",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_460",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_691"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_834"
+          },
+          {
+            "step": "step_834",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "In which level"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "response_type": "response_from_data_type",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "data_type": "data-type_34748",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_834",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "value": "Craving",
+                  "from_entity": "entity_49868"
+                }
+              ]
+            },
+            "next_step": "step_553"
+          },
+          {
+            "step": "step_553",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If individuals are experiencing mild cravings for drugs and alcohol, there are various interventions and strategies that can be employed to help manage and overcome these urges. Here are several approaches:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "CBT",
+                      "value": {
+                        "input": {
+                          "text": "CBT"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Mindfulness Practices",
+                      "value": {
+                        "input": {
+                          "text": "Mindfulness Practices"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Supportive Councelling",
+                      "value": {
+                        "input": {
+                          "text": "Supportive Councelling"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Healthy Distractions",
+                      "value": {
+                        "input": {
+                          "text": "Healthy Distractions"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Lifestyle Changes",
+                      "value": {
+                        "input": {
+                          "text": "Lifestyle Changes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Motivational Engagement",
+                      "value": {
+                        "input": {
+                          "text": "Motivational Engagement"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Reward System",
+                      "value": {
+                        "input": {
+                          "text": "Reward System"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_48865",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_553",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_834"
+                },
+                {
+                  "value": "Mild ",
+                  "from_entity": "entity_39132"
+                }
+              ]
+            },
+            "next_step": "step_712"
+          },
+          {
+            "step": "step_712",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Implement cognitive-behavioral strategies to identify and challenge negative thought patterns associated with cravings. This may involve recognizing and reframing triggers, developing coping mechanisms, and setting goals for behavior change."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_712",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_553"
+                },
+                {
+                  "value": "CBT",
+                  "from_entity": "entity_48865"
+                }
+              ]
+            },
+            "next_step": "step_816"
+          },
+          {
+            "step": "step_816",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Introduce mindfulness techniques, such as meditation and focused breathing exercises, to help individuals increase awareness of their cravings without acting on them. Mindfulness can promote a non-judgmental and accepting attitude toward cravings, making it easier to ride them out."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_816",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_553"
+                },
+                {
+                  "value": "Mindfulness Practices",
+                  "from_entity": "entity_48865"
+                }
+              ]
+            },
+            "next_step": "step_993"
+          },
+          {
+            "step": "step_993",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Engage in individual counseling sessions to explore the reasons behind cravings and develop coping strategies. A supportive therapist can provide guidance on managing stressors and navigating the challenges of overcoming cravings."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_993",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_553"
+                },
+                {
+                  "value": "Supportive Councelling",
+                  "from_entity": "entity_48865"
+                }
+              ]
+            },
+            "next_step": "step_288"
+          },
+          {
+            "step": "step_288",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Encourage engagement in healthy and distracting activities when cravings arise. This could include pursuing hobbies, exercise, or spending time with friends and family. Shifting focus to positive and fulfilling activities can help redirect thoughts away from substance use."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_288",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_553"
+                },
+                {
+                  "value": "Healthy Distractions",
+                  "from_entity": "entity_48865"
+                }
+              ]
+            },
+            "next_step": "step_768"
+          },
+          {
+            "step": "step_768",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Promote positive lifestyle changes, including regular exercise, a balanced diet, and sufficient sleep. These factors contribute to overall well-being and can positively influence mental and emotional states, reducing the likelihood of succumbing to cravings."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_768",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_553"
+                },
+                {
+                  "value": "Lifestyle Changes",
+                  "from_entity": "entity_48865"
+                }
+              ]
+            },
+            "next_step": "step_342"
+          },
+          {
+            "step": "step_342",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Utilize motivational enhancement techniques to explore and strengthen an individual's motivation to resist cravings and maintain their commitment to change. Understanding personal goals and values can be powerful motivators."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_342",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_553"
+                },
+                {
+                  "value": "Motivational Engagement",
+                  "from_entity": "entity_48865"
+                }
+              ]
+            },
+            "next_step": "step_509"
+          },
+          {
+            "step": "step_509",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Establish a reward system for achieving short-term goals related to overcoming cravings. Positive reinforcement can help reinforce positive behaviors and create a sense of accomplishment."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_509",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_553"
+                },
+                {
+                  "value": "Reward System",
+                  "from_entity": "entity_48865"
+                }
+              ]
+            },
+            "next_step": "step_166"
+          },
+          {
+            "step": "step_166",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "When individuals are experiencing extreme cravings for drugs and alcohol, immediate and intensive interventions may be necessary. Here are several strategies for managing extreme cravings:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Immediate Support",
+                      "value": {
+                        "input": {
+                          "text": "Immediate Support"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Crisis Intervention",
+                      "value": {
+                        "input": {
+                          "text": "Crisis Intervention"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Inpatient Detoxification",
+                      "value": {
+                        "input": {
+                          "text": "Inpatient Detoxification"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Intensive Inpatient Rehabilitation",
+                      "value": {
+                        "input": {
+                          "text": "Intensive Inpatient Rehabilitation"
+                        }
+                      }
+                    },
+                    {
+                      "label": "24/7 Support Systems",
+                      "value": {
+                        "input": {
+                          "text": "24/7 Support Systems"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Safety Planning",
+                      "value": {
+                        "input": {
+                          "text": "Safety Planning"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_25378",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_166",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_834"
+                },
+                {
+                  "value": "Extreme",
+                  "from_entity": "entity_39132"
+                }
+              ]
+            },
+            "next_step": "step_210"
+          },
+          {
+            "step": "step_210",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Encourage individuals to reach out for immediate support from friends, family, or a support hotline. Having someone to talk to during moments of intense craving can provide emotional relief and distraction."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_210",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_166"
+                },
+                {
+                  "value": "Immediate Support",
+                  "from_entity": "entity_25378"
+                }
+              ]
+            },
+            "next_step": "step_504"
+          },
+          {
+            "step": "step_504",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If the cravings are overwhelming and there's an immediate risk of relapse, consider seeking crisis intervention. This could involve contacting a local crisis hotline, addiction helpline, or going to the nearest emergency room."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_504",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_166"
+                },
+                {
+                  "value": "Crisis Intervention",
+                  "from_entity": "entity_25378"
+                }
+              ]
+            },
+            "next_step": "step_457"
+          },
+          {
+            "step": "step_457",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If the cravings are associated with physical withdrawal symptoms, inpatient detoxification may be necessary. This provides a controlled and supervised environment with medical professionals to manage the acute phase of withdrawal safely."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_457",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_166"
+                },
+                {
+                  "value": "Inpatient Detoxification",
+                  "from_entity": "entity_25378"
+                }
+              ]
+            },
+            "next_step": "step_198"
+          },
+          {
+            "step": "step_198",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Consider enrolling in an intensive inpatient rehabilitation program that provides round-the-clock support, counseling, and medical care. Inpatient programs offer a structured and controlled environment to address the immediate crisis and develop a comprehensive treatment plan."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_198",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_166"
+                },
+                {
+                  "value": "Intensive Inpatient Rehabilitation",
+                  "from_entity": "entity_25378"
+                }
+              ]
+            },
+            "next_step": "step_452"
+          },
+          {
+            "step": "step_452",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Establish a 24/7 support system, including emergency contacts, crisis hotlines, and connections to addiction specialists. Knowing there is always someone to turn to can be crucial during moments of extreme craving."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_452",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_166"
+                },
+                {
+                  "value": "24/7 Support Systems",
+                  "from_entity": "entity_25378"
+                }
+              ]
+            },
+            "next_step": "step_525"
+          },
+          {
+            "step": "step_525",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Develop a safety plan to navigate extreme cravings. This plan should include specific steps to take, coping strategies, and contact information for support services."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_525",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_166"
+                },
+                {
+                  "value": "Safety Planning",
+                  "from_entity": "entity_25378"
+                }
+              ]
+            },
+            "next_step": "step_767"
+          },
+          {
+            "step": "step_767",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Do you want to undergo **Mindfulness Practices**?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_767",
+            "next_step": "step_300"
+          },
+          {
+            "step": "step_300",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Apply your Earphones and just detox your brain with these music:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "title": "",
+                  "source": "https://https://www.youtube.com/watch?v=7ZJ6GNMeJf0&pp=ygUrbWVkaXRhdGlvbiBtdXNpYyB0byBvdmVyY29tZSBkcnVnIGFkZGljdGlvbg%3D%3D",
+                  "response_type": "iframe",
+                  "channel_options": {
+                    "chat": {
+                      "dimensions": {}
+                    }
+                  }
+                },
+                {
+                  "title": "",
+                  "source": "https://https://www.youtube.com/watch?v=_JolKEMe18g&pp=ygUrbWVkaXRhdGlvbiBtdXNpYyB0byBvdmVyY29tZSBkcnVnIGFkZGljdGlvbg%3D%3D",
+                  "response_type": "iframe",
+                  "channel_options": {
+                    "chat": {
+                      "dimensions": {}
+                    }
+                  }
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_300",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_767"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_177"
+          },
+          {
+            "step": "step_177",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "May be you are feeling good right now..."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "title": "",
+                  "source": "https://https://tse3.mm.bing.net/th?id=OIP.UYqWZJ-9rEmqG4uk3HYXXAHaD4&pid=Api&P=0&h=180",
+                  "alt_text": "Positive Vibes",
+                  "description": "",
+                  "response_type": "image"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_177",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_767"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            },
+            "next_step": "step_550"
+          },
+          {
+            "step": "step_550",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thank You for visiting \"The HOPE\" recovering chatbot to overcome your addiction of drugs and alcohol.\n\nSay Hi or Hello again to restart the conversation."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_550"
+          }
+        ],
+        "title": "Hlw",
+        "action": "action_1855",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_1855_intent_33550"
+        },
+        "variables": [
+          {
+            "title": "When individuals are experiencing extreme cravings for drugs and",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_166",
+            "data_type": "any"
+          },
+          {
+            "title": "May be you are feeling good right now...",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_177",
+            "data_type": "any"
+          },
+          {
+            "title": "Consider enrolling in an intensive inpatient rehabilitation prog",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_198",
+            "data_type": "any"
+          },
+          {
+            "title": "Encourage individuals to reach out for immediate support from fr",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_210",
+            "data_type": "any"
+          },
+          {
+            "title": "Encourage engagement in healthy and distracting activities when ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_288",
+            "data_type": "any"
+          },
+          {
+            "title": "Apply your Earphones and just detox your brain with these music:",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_300",
+            "data_type": "any"
+          },
+          {
+            "title": "How long have you been using drugs?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_306",
+            "data_type": "any"
+          },
+          {
+            "title": "Utilize motivational enhancement techniques to explore and stren",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_342",
+            "data_type": "any"
+          },
+          {
+            "title": "Hey, {variable} For whom this treatment are you looking for?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_426",
+            "data_type": "any"
+          },
+          {
+            "title": "Establish a 24/7 support system, including emergency contacts, c",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_452",
+            "data_type": "any"
+          },
+          {
+            "title": "If the cravings are associated with physical withdrawal symptoms",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_457",
+            "data_type": "any"
+          },
+          {
+            "title": "How long have you been using drugs?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_460",
+            "data_type": "any"
+          },
+          {
+            "title": "If the cravings are overwhelming and there's an immediate risk o",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_504",
+            "data_type": "any"
+          },
+          {
+            "title": "Establish a reward system for achieving short-term goals related",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_509",
+            "data_type": "any"
+          },
+          {
+            "title": "Develop a safety plan to navigate extreme cravings. This plan sh",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_525",
+            "data_type": "any"
+          },
+          {
+            "title": "Here are five-six key points to help someone who has decided to ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_529",
+            "data_type": "any"
+          },
+          {
+            "title": "Thank You for visiting \"The HOPE\" recovering chatbot to overcome",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_550",
+            "data_type": "any"
+          },
+          {
+            "title": "If individuals are experiencing mild cravings for drugs and alco",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_553",
+            "data_type": "any"
+          },
+          {
+            "title": "What is your phone number?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_599",
+            "data_type": "any"
+          },
+          {
+            "title": "Welcome to \"The HOPE Recovering Drug Addiction ChatBot!!!",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_619",
+            "data_type": "any"
+          },
+          {
+            "title": "What is patient's identity?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_660",
+            "data_type": "any"
+          },
+          {
+            "title": "Do you want take Assessment Questions to guide and support you m",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_691",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "What is patient's email address?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_698",
+            "data_type": "any"
+          },
+          {
+            "title": "How old is patient?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_701",
+            "data_type": "number"
+          },
+          {
+            "title": "Implement cognitive-behavioral strategies to identify and challe",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_712",
+            "data_type": "any"
+          },
+          {
+            "title": "Overcoming drug and alcohol use after an extended period of more",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_727",
+            "data_type": "any"
+          },
+          {
+            "title": "Do you want to undergo **Mindfulness Practices**?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_767",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "Promote positive lifestyle changes, including regular exercise, ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_768",
+            "data_type": "any"
+          },
+          {
+            "title": "How are you feeling right now?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_795",
+            "data_type": "any"
+          },
+          {
+            "title": "Introduce mindfulness techniques, such as meditation and focused",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_816",
+            "data_type": "any"
+          },
+          {
+            "title": "In which level",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_834",
+            "data_type": "any"
+          },
+          {
+            "title": "Engage in individual counseling sessions to explore the reasons ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_993",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_1855_intent_33550",
+        "examples": [
+          {
+            "text": "Hlw"
+          },
+          {
+            "text": "hi"
+          },
+          {
+            "text": "hello"
+          },
+          {
+            "text": "hey"
+          },
+          {
+            "text": "huu"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Call agent"
+          },
+          {
+            "text": "Agent help"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to someone"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      }
+    ],
+    "entities": [
+      {
+        "entity": "entity_32562",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "More than 5 yrs",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Less than 5 yrs",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-number",
+        "values": []
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_25378",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "24/7 Support Systems",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Immediate Support",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Crisis Intervention",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Inpatient Detoxification",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Intensive Inpatient Rehabilitation",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Safety Planning",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_14274",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Male",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Other",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Female",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_49868",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Craving",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Addictive",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      },
+      {
+        "entity": "entity_39132",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Mild ",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Extreme",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_48865",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Motivational Engagement",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "CBT",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Mindfulness Practices",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Supportive Councelling",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Healthy Distractions",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Lifestyle Changes",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Reward System",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_10876",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Yes",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "5 yrs",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "More than 5 yrs",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_13518",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Couples(for myself and my partner)",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Individual(for myself)",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Teen(for my child)",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      },
+      "skill": {
+        "counts": {
+          "actions": 5,
+          "intents": 2,
+          "entities": 12,
+          "data_types": 1,
+          "collections": 0,
+          "global_variables": 1
+        }
+      }
+    },
+    "variables": [
+      {
+        "title": "name",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "name",
+        "data_type": "string",
+        "description": ""
+      }
+    ],
+    "data_types": [
+      {
+        "title": "Craving",
+        "entity": "entity_39132",
+        "response": {
+          "options": [
+            {
+              "label": "Mild ",
+              "value": {
+                "input": {
+                  "text": "Mild "
+                }
+              }
+            },
+            {
+              "label": "Extreme",
+              "value": {
+                "input": {
+                  "text": "Extreme"
+                }
+              }
+            }
+          ],
+          "response_type": "option"
+        },
+        "data_type": "data-type_34748"
+      }
+    ],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "off_topic": {
+        "enabled": true
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "I'm sorry, I did not catch that, please confirm."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Do you want to continue with the previous topic: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Yes",
+                    "value": {
+                      "input": {
+                        "text": "Yes"
+                      }
+                    }
+                  },
+                  {
+                    "label": "No",
+                    "value": {
+                      "input": {
+                        "text": "No"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "slot_filling": {
+          "enabled": false
+        }
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above",
+        "use_connect_to_support_prompt": "Connect to support",
+        "single_answer_clarification_prompt": "Something else"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false,
+    "language": "en"
+  },
+  "description": "created for assistant 86f46cae-0994-4ab3-8298-7f99c5ba4aa5",
+  "dialog_settings": {
+    "source_assistant": "c27c84cb-01f5-4857-bc5d-b5510e1af79a"
+  },
+  "created": "2023-11-27T06:53:46.008Z",
+  "updated": "2023-11-27T06:53:46.008Z",
+  "snapshot": "1",
+  "assistant_id": "86f46cae-0994-4ab3-8298-7f99c5ba4aa5",
+  "assistant_references": [
+    {
+      "name": "Overcoming Addiction",
+      "assistant_id": "c27c84cb-01f5-4857-bc5d-b5510e1af79a",
+      "skill_reference": "actions skill"
+    }
+  ]
+}
